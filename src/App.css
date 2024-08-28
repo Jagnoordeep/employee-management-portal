@@ -1,0 +1,220 @@
+:root {
+  --primary-color: #1f2937;
+  --secondary-color: #4f46e5;
+  --background-color: #f9fafb;
+  --text-color: #111827;
+  --card-background-color: #ffffff;
+  --border-color: #e5e7eb;
+  --hover-color: #f3f4f6;
+  --button-hover-color: #4338ca;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --modal-overlay: rgba(17, 24, 39, 0.75);
+  --table-header-background-color: #ffffff;
+  --table-header-text-color: #111827;
+}
+
+.dark-theme {
+  --primary-color: #374151;
+  --secondary-color: #818cf8;
+  --background-color: #1f2937;
+  --text-color: #f3f6f7;
+  --card-background-color: #111827;
+  --border-color: #374151;
+  --hover-color: #374151;
+  --button-hover-color: #6366f1;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+  --modal-overlay: rgba(0, 0, 0, 0.85);
+  --table-text-color: #e5e7eb;
+  --table-header-background-color: #2d3748;
+  --table-header-text-color: #e2e8f0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--background-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.home-content {
+  padding: 40px;
+  background-color: var(--card-background-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  margin-bottom: 40px;
+}
+
+.hero-section {
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+button:hover {
+  background-color: var(--button-hover-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+  color: var(--text-color);
+}
+
+th {
+  background-color: var(--primary-color);
+  color: var(--table-header-text-color);
+}
+
+tr:hover {
+  background-color: var(--hover-color);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-overlay);
+}
+
+.modal-enter {
+  opacity: 0;
+}
+.modal-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.modal-exit {
+  opacity: 1;
+}
+.modal-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.modal-content {
+  background-color: var(--card-background-color);
+  padding: 30px;
+  border-radius: 12px;
+  width: 450px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.modal-content .close-button {
+  background-color: #f87171;
+  margin-top: 20px;
+}
+
+.error {
+  color: #ef4444;
+  margin-bottom: 20px;
+  font-size: 14px;
+}

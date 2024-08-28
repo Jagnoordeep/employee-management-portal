@@ -1,0 +1,94 @@
+.medical-policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  min-width: 800px;
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.medical-policy-table th,
+.medical-policy-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.medical-policy-table th {
+  background-color: var(--primary-color);
+  color: var(--table-header-text-color);
+}
+
+.medical-policy-table tr:hover {
+  background-color: var(--hover-color);
+}
+
+.policy-form {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.policy-form .form-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.policy-form label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.policy-form select {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: var(--input-background-color);
+  color: var(--text-color);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.policy-form select:focus {
+  border-color: var(--primary-color);
+  background-color: var(--input-focus-background-color);
+  outline: none;
+}
+
+.policy-form select option {
+  background-color: var(--card-background-color);
+}
+
+.policy-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.policy-form button:hover {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-2px);
+}
+
+.policy-form button:active {
+  background-color: var(--primary-color-dark);
+  transform: translateY(0);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 14px;
+  font-weight: 500;
+}
