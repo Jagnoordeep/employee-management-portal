@@ -1,13 +1,14 @@
 .yearly-bonus-table {
   width: 100%;
+  max-width: 1400px; 
+  margin: 40px auto; 
+  padding: 30px; 
+  background-color: var(--background-color); 
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px var(--shadow-color); 
   border-collapse: collapse;
-  margin: 20px 0;
   font-size: 16px;
-  min-width: 800px;
-  background-color: var(--card-background-color);
-  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .yearly-bonus-table th,
