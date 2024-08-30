@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import { Element } from "react-scroll";
 import UserTable from "./components/UserTable";
 import AddUserModal from "./components/AddUserModal";
 import MedicalPolicyTable from "./components/MedicalPolicyTable";
 import YearlyBonusTable from "./components/YearlyBonusTable";
-import { CSSTransition } from "react-transition-group";
 import "./App.css";
 
 function App() {
@@ -63,75 +62,57 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <NavBar />
-      <div className="home-content">
-        <div className="hero-content">
-          <h1>Welcome to the Employee Portal</h1>
-          <p>
-            Manage your employees efficiently with our comprehensive employee
-            management system. Navigate through the sections to view and manage
-            employee details, medical policies, and yearly bonus calculations.
-          </p>
-          <div className="button-container">
-            <button onClick={handleAddUser} className="add-user-button">
-              Add New User
-            </button>
-            <button onClick={toggleTheme} className="add-user-button">
-              Toggle {isDarkTheme ? "Light" : "Dark"} Mode
-            </button>
-          </div>
-        </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="home-content">
+                <div className="hero-content">
+                  <h1>Welcome to the Employee Portal</h1>
+                  <p>
+                    Easily manage employee details, access medical policy
+                    information, and track yearly bonuses. Designed for
+                    efficiency, this portal ensures all essential HR tasks are
+                    just a click away.
+                  </p>
+                  <div className="button-container">
+                    <button onClick={handleAddUser} className="add-user-button">
+                      Add New User
+                    </button>
+                    <button onClick={toggleTheme} className="add-user-button">
+                      Toggle {isDarkTheme ? "Light" : "Dark"} Mode
+                    </button>
+                  </div>
+                </div>
+                <UserTable
+                  users={users}
+                  onEdit={handleEditUser}
+                  onDelete={handleDeleteUser}
+                />
+              </div>
+            }
+          />
+          <Route
+            path="/medical-details"
+            element={<MedicalPolicyTable users={users} />}
+          />
+          <Route
+            path="/yearly-bonus"
+            element={<YearlyBonusTable users={users} />}
+          />
+        </Routes>
+        {showAddUserModal && (
+          <AddUserModal
+            onClose={handleCloseModal}
+            onSave={handleSaveUser}
+            editingUser={editingUser}
+          />
+        )}
       </div>
-      <div className="tables-container">
-        <Element name="employee-list" className="section">
-          <CSSTransition
-            in={true}
-            timeout={300}
-            classNames="fade"
-            unmountOnExit
-          >
-            <UserTable
-              users={users}
-              onEdit={handleEditUser}
-              onDelete={handleDeleteUser}
-            />
-          </CSSTransition>
-        </Element>
-        <Element name="medical-details" className="section">
-          <CSSTransition
-            in={true}
-            timeout={300}
-            classNames="fade"
-            unmountOnExit
-          >
-            <MedicalPolicyTable users={users} />
-          </CSSTransition>
-        </Element>
-        <Element name="yearly-bonus" className="section">
-          <CSSTransition
-            in={true}
-            timeout={300}
-            classNames="fade"
-            unmountOnExit
-          >
-            <YearlyBonusTable users={users} />
-          </CSSTransition>
-        </Element>
-      </div>
-      <CSSTransition
-        in={showAddUserModal}
-        timeout={300}
-        classNames="modal"
-        unmountOnExit
-      >
-        <AddUserModal
-          onClose={handleCloseModal}
-          onSave={handleSaveUser}
-          editingUser={editingUser}
-        />
-      </CSSTransition>
-    </div>
+    </Router>
   );
 }
 
