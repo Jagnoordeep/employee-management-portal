@@ -1,13 +1,13 @@
 .medical-policy-table {
   width: 100%;
+  max-width: 1400px;
+  padding: 30px;
+  background-color: var(--background-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
   border-collapse: collapse;
-  margin: 20px 0;
   font-size: 16px;
-  min-width: 800px;
-  background-color: var(--card-background-color);
-  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .medical-policy-table th,
@@ -15,6 +15,7 @@
   padding: 12px 15px;
   border-bottom: 1px solid var(--border-color);
   text-align: left;
+  transition: background-color 0.3s ease;
 }
 
 .medical-policy-table th {
@@ -24,6 +25,16 @@
 
 .medical-policy-table tr:hover {
   background-color: var(--hover-color);
+}
+
+.dark-theme .policy-form select {
+  background-color: var(--card-background-color); /* Darker background */
+  color: var(--text-color); /* Light text for contrast */
+  border: 1px solid var(--border-color);
+}
+
+.dark-theme .policy-form select option {
+  background-color: var(--card-background-color);
 }
 
 .policy-form {
@@ -46,7 +57,8 @@
   margin-bottom: 5px;
 }
 
-.policy-form select {
+.policy-form select,
+.policy-form input {
   padding: 12px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -56,14 +68,11 @@
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.policy-form select:focus {
+.policy-form select:focus,
+.policy-form input:focus {
   border-color: var(--primary-color);
   background-color: var(--input-focus-background-color);
   outline: none;
-}
-
-.policy-form select option {
-  background-color: var(--card-background-color);
 }
 
 .policy-form button {
