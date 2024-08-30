@@ -1,13 +1,14 @@
 .navbar {
   background-color: var(--primary-color);
   box-shadow: 0 2px 10px var(--shadow-color);
-  padding: 20px;
+  padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
   border-radius: 10px;
   margin-bottom: 30px;
+  transition: background-color 0.3s ease;
 }
 
 .navbar-logo {
@@ -24,15 +25,22 @@
 }
 
 .navbar-nav li {
-  margin: 0 20px;
+  margin: 0 16px;
 }
 
 .navbar-nav a {
+  display: flex;
+  align-items: center;
   color: white;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 8px;
   transition: background-color 0.3s ease;
+}
+
+.nav-icon {
+  margin-right: 8px;
+  font-size: 1.2em;
 }
 
 .navbar-nav a:hover {
