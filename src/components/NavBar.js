@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom"; // Use React Router's Link for navigation
 import "./NavBar.css";
 
 function NavBar() {
@@ -9,35 +9,17 @@ function NavBar() {
       <div className="navbar-nav">
         <ul>
           <li>
-            <Link
-              to="employee-list"
-              smooth={true}
-              duration={500}
-              className="nav-link"
-              activeClass="active"
-            >
+            <Link to="/" className="nav-link">
               Employees List
             </Link>
           </li>
           <li>
-            <Link
-              to="medical-details"
-              smooth={true}
-              duration={500}
-              className="nav-link"
-              activeClass="active"
-            >
+            <Link to="/medical-details" className="nav-link">
               Employees Medical Details
             </Link>
           </li>
           <li>
-            <Link
-              to="yearly-bonus"
-              smooth={true}
-              duration={500}
-              className="nav-link"
-              activeClass="active"
-            >
+            <Link to="/yearly-bonus" className="nav-link">
               Employees Yearly Bonus Calculation
             </Link>
           </li>
